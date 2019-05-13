@@ -57,6 +57,39 @@ class PrestadoresTVC: UITableViewController {
         
         return self.prestadores.count
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PrestadorCell {
+            cell.configureCell(prestadores[indexPath.row])
+            
+            return cell
+        }else {
+            return UITableViewCell()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = prestadores[indexPath.row]
+        performSegue(withIdentifier: "PrestadoresEdit", sender: item)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let item = prestadores[indexPath.row]
+            firestore.collection(PRESTADOR_COLLECTION).document(item.id).delete()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PrestadoresEdit" {
+            if let prestador = sender as? PrestadoresItem {
+                if let vc = segue.destination as? AddEditPrestadorVC {
+                    vc.prestadorItem = prestador
+                }
+            }
+        }
+    }
 
     
 
