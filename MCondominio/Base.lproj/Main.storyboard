@@ -451,6 +451,7 @@
                                 <connections>
                                     <outlet property="ivLugar" destination="mBc-f6-PHG" id="lBF-RM-kEX"/>
                                     <outlet property="lbTitulo" destination="cI2-gC-EQO" id="mWM-Gx-kOR"/>
+                                    <segue destination="iAo-nS-Fyh" kind="show" identifier="MapVc" id="cM8-ch-6o7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -460,11 +461,40 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Lugares" id="yrd-zx-Pcp"/>
-                    <navigationItem key="navigationItem" id="KiJ-Q3-Rmd"/>
+                    <navigationItem key="navigationItem" title="Lugares" id="SI5-CP-LOv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCu-2l-IHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3095.6521739130435" y="1899.7767857142856"/>
+        </scene>
+        <!--MapVC-->
+        <scene sceneID="qzh-jP-XS7">
+            <objects>
+                <viewController id="iAo-nS-Fyh" customClass="MapVC" customModule="MCondominio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xBL-E6-6Sn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vL9-eY-8Li">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c3S-Ad-3WA" firstAttribute="trailing" secondItem="vL9-eY-8Li" secondAttribute="trailing" id="A4X-Ov-iWX"/>
+                            <constraint firstItem="vL9-eY-8Li" firstAttribute="bottom" secondItem="c3S-Ad-3WA" secondAttribute="bottom" id="KD3-tc-6kC"/>
+                            <constraint firstItem="vL9-eY-8Li" firstAttribute="top" secondItem="c3S-Ad-3WA" secondAttribute="top" id="PeV-kp-KmE"/>
+                            <constraint firstItem="vL9-eY-8Li" firstAttribute="leading" secondItem="c3S-Ad-3WA" secondAttribute="leading" id="Xen-fX-opA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c3S-Ad-3WA"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="vL9-eY-8Li" id="Xey-gF-bTP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FaG-fK-8V2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3095.6521739130435" y="2626.3392857142858"/>
         </scene>
         <!--Sobre-->
         <scene sceneID="Qqc-iZ-CyI">
@@ -558,8 +588,8 @@
                     <connections>
                         <segue destination="hEj-KH-XUG" kind="relationship" relationship="viewControllers" id="yd9-X0-eLe"/>
                         <segue destination="eGe-vR-Lgj" kind="relationship" relationship="viewControllers" id="Xlo-Ay-ym5"/>
-                        <segue destination="9gR-bz-g10" kind="relationship" relationship="viewControllers" id="RcB-lj-W2h"/>
                         <segue destination="a1T-8z-Fir" kind="relationship" relationship="viewControllers" id="yGm-qQ-dze"/>
+                        <segue destination="jUO-eH-D8u" kind="relationship" relationship="viewControllers" id="bSy-lG-ASQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bk6-bA-OPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -604,10 +634,11 @@
             </objects>
             <point key="canvasLocation" x="416" y="1900"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="ofW-ra-3qn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jUO-eH-D8u" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="mtW-V1-GNA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yf0-c9-l3x">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -628,7 +659,4 @@
         <image name="Icon-App-83.5x83.5" width="83.5" height="83.5"/>
         <image name="hospital" width="752" height="564"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="RcB-lj-W2h"/>
-    </inferredMetricsTieBreakers>
 </document>

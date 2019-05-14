@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class PrestadoresTVC: UITableViewController {
-
+    
     var firestoreListener: ListenerRegistration!
     var prestadores: [PrestadoresItem] = []
     
@@ -18,7 +18,7 @@ class PrestadoresTVC: UITableViewController {
         super.viewDidLoad()
         self.listItems()
     }
-
+    
     
     func listItems() {
         firestoreListener = firestore.collection(PRESTADOR_COLLECTION).order(by: "date", descending: false).addSnapshotListener(includeMetadataChanges: true){ (snapshot, error) in
@@ -47,12 +47,12 @@ class PrestadoresTVC: UITableViewController {
         tableView.reloadData()
     }
     
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.prestadores.count
@@ -90,7 +90,7 @@ class PrestadoresTVC: UITableViewController {
             }
         }
     }
-
     
-
+    
+    
 }

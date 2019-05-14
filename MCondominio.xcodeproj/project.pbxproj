@@ -11,6 +11,7 @@
 		6510D202227F68C600E8B14B /* PrestadoresItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510D201227F68C600E8B14B /* PrestadoresItem.swift */; };
 		6510D204227F923A00E8B14B /* PrestadoresTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510D203227F923A00E8B14B /* PrestadoresTVC.swift */; };
 		6510D206227FBA1700E8B14B /* PrestadorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510D205227FBA1600E8B14B /* PrestadorCell.swift */; };
+		6523F46F228A11B300444F8E /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523F46E228A11B300444F8E /* MapVC.swift */; };
 		655BD28C22779B410031A750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BD28B22779B410031A750 /* AppDelegate.swift */; };
 		655BD28E22779B410031A750 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BD28D22779B410031A750 /* LoginVC.swift */; };
 		655BD29122779B410031A750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655BD28F22779B410031A750 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		6510D201227F68C600E8B14B /* PrestadoresItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrestadoresItem.swift; sourceTree = "<group>"; };
 		6510D203227F923A00E8B14B /* PrestadoresTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrestadoresTVC.swift; sourceTree = "<group>"; };
 		6510D205227FBA1600E8B14B /* PrestadorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrestadorCell.swift; sourceTree = "<group>"; };
+		6523F46E228A11B300444F8E /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		655BD28822779B410031A750 /* MCondominio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCondominio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		655BD28B22779B410031A750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		655BD28D22779B410031A750 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				6510D203227F923A00E8B14B /* PrestadoresTVC.swift */,
 				65EE88362280C538008D3F2F /* AddEditPrestadorVC.swift */,
 				E22F44AE228512F70024CB27 /* LugaresTVC.swift */,
+				6523F46E228A11B300444F8E /* MapVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				E22F44B1228516570024CB27 /* LugaresCell.swift in Sources */,
 				6510D206227FBA1700E8B14B /* PrestadorCell.swift in Sources */,
 				655BD28C22779B410031A750 /* AppDelegate.swift in Sources */,
+				6523F46F228A11B300444F8E /* MapVC.swift in Sources */,
 				655BD2AA2277D8040031A750 /* RegisterVC.swift in Sources */,
 				655BD2BE227A2B150031A750 /* AnuncioCell.swift in Sources */,
 				655BD2AC2279CBC10031A750 /* AddEditAnuncioVC.swift in Sources */,
