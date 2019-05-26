@@ -13,5 +13,6 @@ struct AnuncioItem {
     var author: String = ""
     var id: String = ""
     var date: Date = Date()
+    var title: String = ""
     
 }

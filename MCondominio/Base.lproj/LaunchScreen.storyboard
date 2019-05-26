@@ -19,17 +19,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-App-76x76" translatesAutoresizingMaskIntoConstraints="NO" id="e28-cH-u6g">
-                                <rect key="frame" x="0.0" y="144" width="414" height="618"/>
+                                <rect key="frame" x="0.0" y="353" width="414" height="200"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="mPn-FU-Irs"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="e28-cH-u6g" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="HNy-T1-BpR"/>
                             <constraint firstItem="e28-cH-u6g" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="J15-gx-WLm"/>
-                            <constraint firstItem="e28-cH-u6g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="blc-22-3GB"/>
+                            <constraint firstItem="e28-cH-u6g" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="blc-22-3GB"/>
                             <constraint firstItem="e28-cH-u6g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="euk-RW-Epo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e28-cH-u6g" secondAttribute="bottom" constant="100" id="pJM-kt-MeY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="e28-cH-u6g" secondAttribute="bottom" constant="100" id="pJM-kt-MeY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

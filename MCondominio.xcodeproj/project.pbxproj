@@ -21,11 +21,12 @@
 		655BD2A42277A6130031A750 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 655BD2A32277A6130031A750 /* GoogleService-Info.plist */; };
 		655BD2A82277ABC50031A750 /* AnunciosTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BD2A72277ABC50031A750 /* AnunciosTVC.swift */; };
 		655BD2AA2277D8040031A750 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BD2A92277D8040031A750 /* RegisterVC.swift */; };
-		655BD2AC2279CBC10031A750 /* AddEditAnuncioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BD2AB2279CBC10031A750 /* AddEditAnuncioVC.swift */; };
 		655BD2AF2279CCC00031A750 /* AnuncioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BD2AE2279CCC00031A750 /* AnuncioItem.swift */; };
 		655BD2B22279D0A30031A750 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BD2B12279D0A30031A750 /* Constants.swift */; };
 		655BD2BE227A2B150031A750 /* AnuncioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BD2BD227A2B150031A750 /* AnuncioCell.swift */; };
-		65EE88372280C538008D3F2F /* AddEditPrestadorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE88362280C538008D3F2F /* AddEditPrestadorVC.swift */; };
+		6571C7AC229A3FB600AC6842 /* AddEditPrestadorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571C7AB229A3FB600AC6842 /* AddEditPrestadorVC.swift */; };
+		6571C7AE229A516B00AC6842 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6571C7AD229A516B00AC6842 /* Settings.bundle */; };
+		6571C7B0229A632700AC6842 /* AjustesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571C7AF229A632700AC6842 /* AjustesVC.swift */; };
 		E22F44AF228512F70024CB27 /* LugaresTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F44AE228512F70024CB27 /* LugaresTVC.swift */; };
 		E22F44B1228516570024CB27 /* LugaresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F44B0228516570024CB27 /* LugaresCell.swift */; };
 		E22F44B3228517D00024CB27 /* LugaresItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F44B2228517D00024CB27 /* LugaresItem.swift */; };
@@ -49,11 +50,12 @@
 		655BD2A32277A6130031A750 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		655BD2A72277ABC50031A750 /* AnunciosTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnunciosTVC.swift; sourceTree = "<group>"; };
 		655BD2A92277D8040031A750 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
-		655BD2AB2279CBC10031A750 /* AddEditAnuncioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditAnuncioVC.swift; sourceTree = "<group>"; };
 		655BD2AE2279CCC00031A750 /* AnuncioItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnuncioItem.swift; sourceTree = "<group>"; };
 		655BD2B12279D0A30031A750 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		655BD2BD227A2B150031A750 /* AnuncioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnuncioCell.swift; sourceTree = "<group>"; };
-		65EE88362280C538008D3F2F /* AddEditPrestadorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditPrestadorVC.swift; sourceTree = "<group>"; };
+		6571C7AB229A3FB600AC6842 /* AddEditPrestadorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditPrestadorVC.swift; sourceTree = "<group>"; };
+		6571C7AD229A516B00AC6842 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = MCondominio/Settings.bundle; sourceTree = SOURCE_ROOT; };
+		6571C7AF229A632700AC6842 /* AjustesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesVC.swift; sourceTree = "<group>"; };
 		8A7DA0D79901028A52C4F974 /* Pods-MCondominio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MCondominio.debug.xcconfig"; path = "Target Support Files/Pods-MCondominio/Pods-MCondominio.debug.xcconfig"; sourceTree = "<group>"; };
 		E22F44AE228512F70024CB27 /* LugaresTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugaresTVC.swift; sourceTree = "<group>"; };
 		E22F44B0228516570024CB27 /* LugaresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LugaresCell.swift; path = MCondominio/View/LugaresCell.swift; sourceTree = SOURCE_ROOT; };
@@ -102,6 +104,7 @@
 		655BD28A22779B410031A750 /* MCondominio */ = {
 			isa = PBXGroup;
 			children = (
+				6571C7AD229A516B00AC6842 /* Settings.bundle */,
 				655BD2BC227A2AAD0031A750 /* View */,
 				655BD2B72279D1730031A750 /* Controller */,
 				655BD2B42279D13B0031A750 /* Model */,
@@ -138,14 +141,14 @@
 		655BD2B72279D1730031A750 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6571C7AB229A3FB600AC6842 /* AddEditPrestadorVC.swift */,
 				655BD28D22779B410031A750 /* LoginVC.swift */,
 				655BD2A72277ABC50031A750 /* AnunciosTVC.swift */,
 				655BD2A92277D8040031A750 /* RegisterVC.swift */,
-				655BD2AB2279CBC10031A750 /* AddEditAnuncioVC.swift */,
 				6510D203227F923A00E8B14B /* PrestadoresTVC.swift */,
-				65EE88362280C538008D3F2F /* AddEditPrestadorVC.swift */,
 				E22F44AE228512F70024CB27 /* LugaresTVC.swift */,
 				6523F46E228A11B300444F8E /* MapVC.swift */,
+				6571C7AF229A632700AC6842 /* AjustesVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			files = (
 				655BD29922779B470031A750 /* LaunchScreen.storyboard in Resources */,
 				655BD2A42277A6130031A750 /* GoogleService-Info.plist in Resources */,
+				6571C7AE229A516B00AC6842 /* Settings.bundle in Resources */,
 				655BD29622779B470031A750 /* Assets.xcassets in Resources */,
 				655BD29122779B410031A750 /* Main.storyboard in Resources */,
 			);
@@ -306,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				655BD2AF2279CCC00031A750 /* AnuncioItem.swift in Sources */,
+				6571C7AC229A3FB600AC6842 /* AddEditPrestadorVC.swift in Sources */,
 				E22F44AF228512F70024CB27 /* LugaresTVC.swift in Sources */,
 				6510D202227F68C600E8B14B /* PrestadoresItem.swift in Sources */,
 				655BD28E22779B410031A750 /* LoginVC.swift in Sources */,
@@ -318,10 +323,9 @@
 				6523F46F228A11B300444F8E /* MapVC.swift in Sources */,
 				655BD2AA2277D8040031A750 /* RegisterVC.swift in Sources */,
 				655BD2BE227A2B150031A750 /* AnuncioCell.swift in Sources */,
-				655BD2AC2279CBC10031A750 /* AddEditAnuncioVC.swift in Sources */,
-				65EE88372280C538008D3F2F /* AddEditPrestadorVC.swift in Sources */,
 				E22F44B3228517D00024CB27 /* LugaresItem.swift in Sources */,
 				655BD2B22279D0A30031A750 /* Constants.swift in Sources */,
+				6571C7B0229A632700AC6842 /* AjustesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

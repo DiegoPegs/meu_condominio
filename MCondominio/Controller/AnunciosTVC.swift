@@ -14,6 +14,7 @@ class AnunciosTVC: UITableViewController {
     var firestoreListener: ListenerRegistration!
     var anuncios: [AnuncioItem] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.listItems()
@@ -37,8 +38,8 @@ class AnunciosTVC: UITableViewController {
         anuncios.removeAll()
         for document in snapshot.documents {
             let data = document.data()
-            if let anuncio = data["anuncio"] as? String, let author = data["author"] as? String {
-                let anuncioItem = AnuncioItem(anuncio: anuncio, author: author, id: document.documentID, date: Date())
+            if let anuncio = data["anuncio"] as? String, let author = data["author"] as? String, let title = data["title"] as? String {
+                let anuncioItem = AnuncioItem(anuncio: anuncio, author: author, id: document.documentID, date: Date(), title: title)
                 
                 anuncios.append(anuncioItem)
             }
@@ -70,8 +71,8 @@ class AnunciosTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = anuncios[indexPath.row]
-        performSegue(withIdentifier: "AnuncioEdit", sender: item)
-        tableView.deselectRow(at: indexPath, animated: true)
+        addEdit(anuncioItem: item)
+        
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -81,14 +82,88 @@ class AnunciosTVC: UITableViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AnuncioEdit" {
-            if let anuncio = sender as? AnuncioItem {
-                if let vc = segue.destination as? AddEditAnuncioVC {
-                    vc.anuncioItem = anuncio
+    @IBAction func addItem(_ sender: UIBarButtonItem) {
+        
+        addEdit()
+        
+    }
+    
+    func addAnuncio(_ item: AnuncioItem) {
+        let data: [String: Any] = [
+            "anuncio": item.anuncio,
+            "author": Auth.auth().currentUser?.displayName ?? "",
+            "title": item.title,
+            "authorID": Auth.auth().currentUser!.uid,
+            "date": Date()
+        ]
+        
+        
+        if item.id.isEmpty {
+            //Criar
+            firestore.collection(ANUNCIO_COLLECTION).addDocument(data: data) { (error) in
+                if error != nil {
+                    self.showAlertWIthOk(title: "Erro Adicionar Item", message: error?.localizedDescription ?? "")
+                }else{
+                    self.showAlertWIthOk(title: "Sucesso", message: "Anúncio gravado com sucesso!")
+                    
                 }
+                
+            }
+        } else {
+            //Editar
+            firestore.collection(ANUNCIO_COLLECTION).document(item.id).updateData(data) { (error) in
+                if error != nil {
+                    self.showAlertWIthOk(title: "Erro Editar Item", message: error?.localizedDescription ?? "")
+                }else{
+                    self.showAlertWIthOk(title: "Sucesso", message: "Anúncio gravado com sucesso!")
+                }
+                
             }
         }
     }
+    
+    func addEdit(anuncioItem: AnuncioItem? = nil){
+        if anuncioItem != nil {
+            if anuncioItem?.author != Auth.auth().currentUser?.displayName {
+                 return
+            }
+        }
+        
+        let title = anuncioItem == nil ? "Adicionar" : "Editar"
+        let message = anuncioItem == nil ? "Adicionado" : "Editado"
+        let alert = UIAlertController(title: title, message: "Digite abaixo os dados do item a ser \(message)", preferredStyle: .alert)
+        alert.addTextField { (textfield) in
+            textfield.placeholder = "Titulo"
+            textfield.text = anuncioItem?.title
+        }
+        
+        alert.addTextField { (textfield) in
+            textfield.placeholder = "Descrição"
+            textfield.text = anuncioItem?.anuncio
+            
+        }
+        
+        let addAction = UIAlertAction(title: title, style: .default) { (_) in
+            guard let title = alert.textFields?.first?.text,
+                let anuncio = alert.textFields?.last?.text,
+                !title.isEmpty,
+                !anuncio.isEmpty else{return}
+            
+            var item = anuncioItem ?? AnuncioItem()
+            item.title = title
+            item.anuncio = anuncio
+            
+            self.addAnuncio(item)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        alert.addAction(addAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+ 
 
 }

@@ -13,6 +13,7 @@ class AnuncioCell: UITableViewCell {
     
     @IBOutlet weak var lbAnuncio: UILabel!
     @IBOutlet weak var lbAuthor: UILabel!
+    @IBOutlet weak var lbTitle: UILabel!
     
     var anuncio: AnuncioItem!
     
@@ -22,6 +23,7 @@ class AnuncioCell: UITableViewCell {
         self.anuncio = anuncio
         self.lbAnuncio.text = self.anuncio.anuncio
         self.lbAuthor.text = self.anuncio.author
+        self.lbTitle.text = self.anuncio.title
     }
     
 }
