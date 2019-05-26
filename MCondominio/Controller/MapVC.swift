@@ -57,6 +57,13 @@ class MapVC: UIViewController {
             if error == nil {
                 guard let response = response else{return}
                 self.mapView.removeAnnotations(self.mapView.annotations)
+                
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2D(latitude: self.lat, longitude: self.long)
+                annotation.title = "Meu Condomínio"
+                
+                self.mapView.addAnnotation(annotation)
+                
                 for item in response.mapItems {
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = item.placemark.coordinate
