@@ -25,13 +25,36 @@ class LoginVC: UIViewController {
                 self.showMainScreen(user: user, animated: false)
             }
         })
+        
+        setupKeyboardDismissRecognizer()
     }
     
     func showMainScreen(user: User?, animated: Bool = true){
         print("Indo para a proxima tela")
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "mainTabBar")else{return}
-        self.present(vc, animated: true, completion: nil)
         
+        let userDefaults = UserDefaults.standard
+        let logged = userDefaults.array(forKey: "logged")
+        if logged == nil {
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: "mainTabBar")else{return}
+            self.present(vc, animated: true, completion: nil)
+        }else{
+            dismiss(animated: true, completion: nil)
+        }
+        
+        
+    }
+    
+    func setupKeyboardDismissRecognizer(){
+        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard))
+        
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
     }
 
     

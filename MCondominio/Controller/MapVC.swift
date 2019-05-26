@@ -15,20 +15,25 @@ class MapVC: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     var pointOfInterest: String?
-    let lat: CLLocationDegrees = -23.520361
-    let long: CLLocationDegrees = -46.680801
+    
+    let ud = UserDefaults.standard
+    
+    var lat: CLLocationDegrees = -23.520361
+    var long: CLLocationDegrees = -46.680801
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         mapView.delegate = self
         mapView.userTrackingMode = .follow
         
         if let poi = pointOfInterest {
             let ud = UserDefaults.standard
             guard let dLat = Double(ud.string(forKey: "latitude") ?? "0"),let dLong = Double(ud.string(forKey: "longitude") ?? "0") else {return}
-            
-            let lat = CLLocationDegrees(dLat)
-            let long = CLLocationDegrees(dLong)
+            if dLat != 0 && dLong != 0 {
+                self.lat = CLLocationDegrees(dLat)
+                self.long = CLLocationDegrees(dLong)
+            }
             let center = CLLocationCoordinate2D(latitude: lat, longitude: long)
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
             mapView.setRegion(region, animated: true)
